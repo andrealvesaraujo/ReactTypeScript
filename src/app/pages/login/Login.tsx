@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
+import { UsuarioLogadoContext } from "../../shared/contexts"
 import { ButtonLogin } from "./components/ButtonLogin"
 
 import { InputLogin } from "./components/InputLogin"
@@ -8,6 +9,9 @@ export const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const {nomeDoUsuario} = useContext(UsuarioLogadoContext)
+
 
     const emailLength = useMemo(()=>{
         return email.length*1000
@@ -31,6 +35,9 @@ export const Login = () => {
         <div>
             <form>
                 <p>Quantidade de caracteres no email: {emailLength}</p>
+
+                <p>{nomeDoUsuario}</p>
+
                 <InputLogin
                     label="Email"
                     value={email}
@@ -48,9 +55,6 @@ export const Login = () => {
 
                 <ButtonLogin type="button" onClick={handleEntrar}>
                     Entrar
-                </ButtonLogin>
-                <ButtonLogin type="button" onClick={handleEntrar}>
-                    Cadastrar-se
                 </ButtonLogin>
 
             </form>

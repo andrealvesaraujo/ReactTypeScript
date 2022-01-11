@@ -1,5 +1,5 @@
-import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
-import { UsuarioLogadoContext } from "../../shared/contexts"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useUsuarioLogado } from "../../shared/hooks/UseUsuarioLogado"
 import { ButtonLogin } from "./components/ButtonLogin"
 
 import { InputLogin } from "./components/InputLogin"
@@ -10,7 +10,7 @@ export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const {nomeDoUsuario} = useContext(UsuarioLogadoContext)
+    const {nomeDoUsuario} = useUsuarioLogado()
 
 
     const emailLength = useMemo(()=>{

@@ -1,19 +1,14 @@
 {
-  "posts": [
-    {
-      "title": "Meu post",
-      "author": "Lucas",
-      "id": 1
-    }
-  ],
-  "comments": [
+  "tarefas": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "Tarefa 01",
+      "isCompleted": false
+    },
+    {
+      "title": "Tarefa 02",
+      "isCompleted": false,
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
